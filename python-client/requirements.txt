@@ -1,0 +1,23 @@
+PySDL2
+pysdl2-dll
+PyOpenGL
+signalslot >= 0.2.0
+ifaddr
+appdirs
+bcrypt
+cffi
+cryptography
+# Python 3.12 support started with 6.16.0
+cx-Freeze >= 6.16.0; sys_platform == 'win32'
+pywin32; sys_platform == 'win32'
+shiv; sys_platform == 'linux'
+# packaging script on linux expects pipenv
+pipenv; sys_platform == 'linux'
+idna
+netifaces
+paramiko
+pycparser
+PyNaCl
+six
+imgui[sdl2]
+zeroconf
