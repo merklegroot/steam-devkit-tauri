@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Tauri: dev (npm)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run tauri dev",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Python API: run (venv)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/python-client/api_server.py",
+      "cwd": "${workspaceFolder}/python-client",
+      "python": "${workspaceFolder}/python-client/.venv/bin/python",
+      "args": ["--host", "127.0.0.1", "--port", "32100", "--verbose", "INFO"],
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/python-client/client"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Dev: Tauri + Python API",
+      "configurations": ["Python API: run (venv)", "Tauri: dev (npm)"],
+      "stopAll": true
+    }
+  ]
+}
+
